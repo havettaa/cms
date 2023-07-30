@@ -1,2 +1,2 @@
 # cms
-sample angulares
+samples projektantes
