@@ -1,0 +1,93 @@
+<script>
+	export const registerObj = { name: "Svelte Kit", emailId: "emId", password: "pwd" };
+
+	function toggleMobileNavbar () {
+		let collapse = document.querySelector("#navbar-collapse");
+		if (collapse) {
+			collapse.classList.toggle("hidden");
+			collapse.classList.toggle("flex");
+		}
+	}
+</script>
+
+<svelte:head>
+	<title>About</title>
+	<meta name="description" content="About this app" />
+</svelte:head>
+
+
+
+<div class="header-2">
+	<nav class="bg-white py-2 md:py-4">
+		<div class="container px-4 mx-auto md:flex md:items-center">
+
+			<div class="flex justify-between items-center">
+				<a href="/" class="flex font-bold text-xl text-indigo-600">
+					<svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54">
+						<path
+							d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
+					</svg>
+					{registerObj.name}
+				</a>
+				<button
+					class="border border-solid border-gray-600 px-3 py-3 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden"
+					on:click={toggleMobileNavbar}>
+					<svg class="fill-current h-3 w-3" viewBox="0 0 20 20">
+						<title>Menu</title>
+						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+					</svg>
+				</button>
+			</div>
+
+			<div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" id="navbar-collapse">
+				<a href="/admin" class="p-2 lg:px-4 md:mx-2 text-white rounded bg-indigo-600">
+					admin</a>
+				<a href="/login"
+					class="p-2 lg:px-4 md:mx-2 text-indigo-600 text-center border border-transparent rounded hover:bg-indigo-100 hover:text-indigo-700 transition-colors duration-300">
+					Login</a>
+				<a href="/signup"
+					class="p-2 lg:px-4 md:mx-2 text-indigo-600 text-center border border-solid border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1">
+					Signup</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="bg-indigo-100 py-6 md:py-12">
+		<div class="container px-4 mx-auto">
+
+			<div class="text-center max-w-2xl mx-auto">
+				<h1 class="text-3xl md:text-4xl font-medium mb-2">Don't get it now...</h1>
+				<button class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6">Don't Get Started</button>
+				<div id="mainContent" class="mt-4">
+
+					<!-- mainContent -->
+
+				</div>
+			</div>
+
+			<div class="md:flex md:flex-wrap md:-mx-4 mt-6 md:mt-12">
+
+				<div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+					<span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+					<h5 class="text-xl font-medium uppercase mb-4">Fresh Design</h5>
+					<p class="text-gray-600">Nobody reads this small text anyways and if you are reading this now, you better get back to work.</p>
+				</div>
+
+				<div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+					<span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+					<h5 class="text-xl font-medium uppercase mb-4">Clean Code</h5>
+					<p class="text-gray-600">So will not worry about the content here as even google is not interested in crawling this useless blank space stuffing.</p>
+				</div>
+
+				<div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+					<span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+					<h5 class="text-xl font-medium uppercase mb-4">Perfect Tool</h5>
+					<p class="text-gray-600">Let's just place some random sentences and move on with some meaningless activities.</p>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>
