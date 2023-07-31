@@ -1,8 +1,5 @@
 <script>
-	import { page } from '$app/stores';
-	import github from '$lib/images/github.svg';
-
-	function toggleMobileTopbar() {
+	function toggleMobileAside() {
 		let asideCollapse = document.querySelector('#aside-collapse');
 		if (asideCollapse) {
 			asideCollapse.classList.toggle('hidden');
@@ -11,13 +8,13 @@
 	}
 </script>
 
-<div class="container flex items-center justify-between h-full px-6 mx-auto text-blue-600 dark:text-blue-300">
+<div class="container flex items-center justify-between h-full px-5 mx-auto text-blue-600 dark:text-blue-300">
 	<!-- Mobile hamburger -->
 	<button
-		class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-blue"
+		class="z-40 mr-5 rounded-md md:hidden focus:outline-none focus:shadow-outline-blue"
 		data-click="toggleSideMenu"
 		aria-label="Menu"
-		on:click={toggleMobileTopbar}
+		on:click={toggleMobileAside}
 	>
 		<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
 			<path

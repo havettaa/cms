@@ -3,42 +3,19 @@
 	import './styles.css';
 </script>
 
-<div class="flex flex-col md:ml-64">
+<div class="flex flex-col md:ml-64 bg-gray-50 dark:bg-gray-900 min-h-screen">
 	<Header />
 
-	<main>
+	<main class="flex flex-col w-full mx-auto box-border">
 		<slot />
 	</main>
 
-	<footer>
+	<footer class="flex flex-col p-4 justify-center">
 		2023
 	</footer>
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		margin: 0 auto;
-		width: 100%;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
 	@media (min-width: 480px) {
 		footer {
 			padding: 12px 0;

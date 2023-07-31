@@ -38,7 +38,7 @@
 	<meta name="description" content="dashboard" />
 </svelte:head>
 
-<main class="h-full overflow-y-auto">
+<section class="h-full overflow-y-auto">
 	<div class="container px-6 mx-auto grid">
 		<h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Dashboard</h2>
 		<!-- CTA -->
@@ -583,7 +583,7 @@
 			</div>
 		</div>
 	</div>
-</main>
+</section>
 
 
 <section>

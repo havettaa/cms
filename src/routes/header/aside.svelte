@@ -1,6 +1,9 @@
-<aside id="#aside-collapse" class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0 fixed top-0 left-0 z-20 w-64 h-full overflow-y-auto bg-white dark:bg-gray-800">
+<aside id="aside-collapse" class="hidden md:flex md:flex-row md:ml-auto mt-0 fixed top-0 left-0 z-20 w-64 h-full overflow-y-auto bg-white dark:bg-gray-800">
 	<section class="py-4 text-gray-500 dark:text-gray-400">
-		<a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="/"> ABAM Portal </a>
+		<a class="md:ml-6 ml-16 text-lg font-bold text-gray-800 dark:text-gray-200" href="/"> ABAM Portal </a>
+		<button class="btn btn-ghost bg-gray-300 rounded-full z-50 top-0 right-0 mt-2 mr-2 p-2 absolute lg:hidden" on:click={() => document.querySelector('#aside-collapse')?.classList?.toggle('hidden')}>
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 inline-block w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+		</button>
 		<ul class="mt-6">
 			<li class="relative px-6 py-3">
 				<span
@@ -98,7 +101,7 @@
 			<li class="relative px-6 py-3">
 				<a
 					class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-					href="buttons.html"
+					href="/"
 				>
 					<svg
 						class="w-5 h-5"
@@ -120,7 +123,7 @@
 			<li class="relative px-6 py-3">
 				<a
 					class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-					href="modals.html"
+					href="/"
 				>
 					<svg
 						class="w-5 h-5"
@@ -142,7 +145,7 @@
 			<li class="relative px-6 py-3">
 				<a
 					class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-					href="tables.html"
+					href="/"
 				>
 					<svg
 						class="w-5 h-5"
@@ -204,27 +207,27 @@
 						<li
 							class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						>
-							<a class="w-full" href="pages/login.html">Login</a>
+							<a class="w-full" href="/login">Login</a>
 						</li>
 						<li
 							class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						>
-							<a class="w-full" href="pages/create-account.html"> Create account </a>
+							<a class="w-full" href="/login"> Create account </a>
 						</li>
 						<li
 							class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						>
-							<a class="w-full" href="pages/forgot-password.html"> Forgot password </a>
+							<a class="w-full" href="/login"> Forgot password </a>
 						</li>
 						<li
 							class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						>
-							<a class="w-full" href="pages/404.html">404</a>
+							<a class="w-full" href="/login">404</a>
 						</li>
 						<li
 							class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 						>
-							<a class="w-full" href="pages/blank.html">Blank</a>
+							<a class="w-full" href="/">Blank</a>
 						</li>
 					</ul>
 				</template>
