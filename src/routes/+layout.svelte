@@ -1,9 +1,9 @@
 <script>
-	import Header from './Header.svelte';
+	import Header from './header/header.svelte';
 	import './styles.css';
 </script>
 
-<div class="app">
+<div class="flex flex-col md:ml-64">
 	<Header />
 
 	<main>
@@ -26,9 +26,8 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
 		margin: 0 auto;
+		width: 100%;
 		box-sizing: border-box;
 	}
 
