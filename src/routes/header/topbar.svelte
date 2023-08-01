@@ -1,32 +1,10 @@
-<script>
-	function toggleMobileAside() {
-		let asideCollapse = document.querySelector('#aside-collapse');
-		if (asideCollapse) {
-			asideCollapse.classList.toggle('hidden');
-			asideCollapse.classList.toggle('flex');
-		}
-	}
-</script>
-
-<div class="container flex items-center justify-between h-full px-5 mx-auto text-blue-600 dark:text-blue-300">
-	<!-- Mobile hamburger -->
-	<button
-		class="z-40 mr-5 rounded-md md:hidden focus:outline-none focus:shadow-outline-blue"
-		data-click="toggleSideMenu"
-		aria-label="Menu"
-		on:click={toggleMobileAside}
-	>
-		<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-			<path
-				fill-rule="evenodd"
-				d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-				clip-rule="evenodd"
-			/>
-		</svg>
-	</button>
+<div class="z-30 static container flex items-center justify-between h-full px-5 mx-auto text-blue-600 dark:text-blue-300">
+	<!-- Overpaint shadow of side bar
+	<div data-func="sidebarcollapse" class="z-50 absolute hidden left-64 px-1 py-6 bg-white shadow-md dark:bg-gray-800"></div>
+	-->
 	<!-- Search input -->
 	<div class="flex justify-center flex-1 lg:mr-32">
-		<div class="relative w-full max-w-xl mr-6 focus-within:text-blue-500">
+		<div class="relative w-full max-w-xl mr-6 ml-8 focus-within:text-blue-500">
 			<div class="absolute inset-y-0 flex items-center pl-2">
 				<svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
 					<path

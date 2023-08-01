@@ -1,7 +1,16 @@
-<aside id="aside-collapse" class="hidden md:flex md:flex-row md:ml-auto mt-0 fixed top-0 left-0 z-20 w-64 h-full overflow-y-auto bg-white dark:bg-gray-800">
+<script>
+  import imglogo from '$lib/images/logo.svg';
+</script>
+
+<aside data-func="sidebarcollapse" class="fixed z-40 top-0 left-0 mt-0 shadow-xl w-64 h-full overflow-y-auto bg-white dark:bg-gray-800 hidden md:flex md:flex-row md:ml-auto">
 	<section class="py-4 text-gray-500 dark:text-gray-400">
-		<a class="md:ml-6 ml-16 text-lg font-bold text-gray-800 dark:text-gray-200" href="/"> ABAM Portal </a>
-		<button class="btn btn-ghost bg-gray-300 rounded-full z-50 top-0 right-0 mt-2 mr-2 p-2 absolute lg:hidden" on:click={() => document.querySelector('#aside-collapse')?.classList?.toggle('hidden')}>
+		<a class="flex flex-row md:ml-6 ml-16 text-lg font-bold text-gray-800 dark:text-gray-200" href="/">
+			<img src={imglogo} class="w-16 mx-2" alt="Portal Logo" />
+			Portal
+		</a>
+		<button class="absolute md:hidden z-50 top-0 right-0 rounded-full mt-2 mr-2 p-2 hover:bg-gray-200 bg-gray-300"
+			on:click={() => window.dispatchEvent(new CustomEvent("togglesidebar"))}
+		>
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 inline-block w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
 		</button>
 		<ul class="mt-6">

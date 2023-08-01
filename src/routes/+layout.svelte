@@ -10,15 +10,7 @@
 		<slot />
 	</main>
 
-	<footer class="flex flex-col p-4 justify-center">
-		2023
+	<footer class="flex flex-row p-4 justify-center">
+		<p>2023</p>
 	</footer>
 </div>
-
-<style>
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>

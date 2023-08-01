@@ -562,7 +562,7 @@
 				<h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">Traffic</h4>
 
 
-				<ul>
+				<ul class="text-gray-700 dark:text-gray-400">
 					{#each data.accounts as account}
 						<li>{account.note}</li>
 					{/each}
@@ -613,13 +613,3 @@
 	</pre>
 
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-</style>
