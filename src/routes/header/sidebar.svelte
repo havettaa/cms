@@ -9,7 +9,8 @@
 			Portal
 		</a>
 		<button class="absolute md:hidden z-50 top-0 right-0 rounded-full mt-2 mr-2 p-2 hover:bg-gray-200 bg-gray-300"
-			on:click={() => window.dispatchEvent(new CustomEvent("togglesidebar"))}
+			on:click={() => document.querySelectorAll('[data-func="sidebarcollapse"]').forEach((e) => {e?.classList?.toggle('hidden')})}
+			onclick="document.querySelectorAll('[data-func=sidebarcollapse]').forEach((e) => e?.classList?.toggle('hidden') )"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 inline-block w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
 		</button>
@@ -110,7 +111,7 @@
 			<li class="relative px-6 py-3">
 				<a
 					class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-					href="/"
+					href="/remarkable"
 				>
 					<svg
 						class="w-5 h-5"
@@ -126,7 +127,7 @@
 							d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
 						/>
 					</svg>
-					<span class="ml-4">Buttons</span>
+					<span class="ml-4">Remarkable</span>
 				</a>
 			</li>
 			<li class="relative px-6 py-3">
