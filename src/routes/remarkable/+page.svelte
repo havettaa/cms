@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { loadScript } from './loadscript.js';
   import { browser } from '$app/environment'
 
   let store;
@@ -11,18 +12,26 @@
     value = window.state;
   }
 
-  onMount(() => {
-    console.log('onMount');
-    // window.store = await import("https://aurelhavetta.eu/mfe/store.js");
-    value = window.state;
-  });
-
   const initme = () => {
     console.log('initme');
     value = window.state;
   }
+  
+  onMount(async () => {
+    console.log('onMount');
+    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/remarkable/2.0.0/remarkable.min.js', 'application/javascript');
+    await initializeRemarkable();
+    
+    window.store = await import("https://aurelhavetta.eu/mfe/store.js");
+    value = window.state;
+    setInterval(() => value = window.state = `# Time is ${new Date().toLocaleTimeString()}`, 5000);
+  });
+
 
 	const initializeRemarkable = async () => {
+    if (!window.store)
+      resetMarkDownState();
+      
 		md = new window.remarkable.Remarkable();
     window.store = await import("https://aurelhavetta.eu/mfe/store.js");
     value = window.state;
@@ -32,7 +41,8 @@
     window.state = value;
 	}
 
-  const setMarkDownToState = () => {
+  const resetMarkDownState = () => {
+    console.log('resetMarkDownState');
     value = '# Hello, **world** reset.';
     console.log(value);
     window.state = value;
@@ -41,11 +51,11 @@
 
 <svelte:head>
 	<script src="https://aurelhavetta.eu/mfe/store.js" type="module"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/2.0.0/remarkable.min.js" on:load={initializeRemarkable}></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/2.0.0/remarkable.min.js" on:load={initializeRemarkable}></script> -->
 </svelte:head>
 
 <div use:initme class="flex flex-col w-96">
-  <button on:click="{setMarkDownToState}" class="btn btn-primary">Initialize State</button>
+  <button on:click="{resetMarkDownState}" class="btn btn-primary">Initialize State</button>
 
   <div>
 		{#if md}
